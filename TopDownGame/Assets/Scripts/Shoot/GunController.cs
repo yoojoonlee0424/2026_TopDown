@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace TopDown.Shooting
 {
@@ -13,10 +14,16 @@ namespace TopDown.Shooting
         [SerializeField] private Transform firePoint;
         [SerializeField]private Animator muzzleFlashAnimator;
 
+        private bool isShooting = false;
 
         private void Update()
         {
             cooldownTimer += Time.deltaTime;
+
+            if (isShooting)
+            {
+                Shoot();
+            }
         }
 
         private void Shoot()
@@ -35,10 +42,31 @@ namespace TopDown.Shooting
             cooldownTimer = 0;  
         }
 
+
         #region Input
-        private void OnShoot()
+        private void OnShoot(InputValue value)
         {
-            Shoot();
+            /*if(value.Get<float>() > 0.1f)
+                Shoot();*/
+
+            isShooting = true;
+        }
+
+        private void OnShootRelease(InputValue value)
+        {
+            // 발사 버튼을 놓았을 때의 로직 추가 가능
+
+            isShooting = false;
+        }
+
+        private void OnReload()
+        {
+            // 재장전 관련 로직 추가 가능
+        }
+
+        private void OnAim()
+        {
+            // 조준 관련 로직 추가 가능
         }
         #endregion
 

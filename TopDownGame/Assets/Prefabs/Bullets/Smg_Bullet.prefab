@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3159335449379096724}
   - component: {fileID: 684139981841671014}
   m_Layer: 0
-  m_Name: Player_Bullet
-  m_TagString: Untagged
+  m_Name: Smg_Bullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1803258b33cf784e90a57513339082b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::projectile
-  speed: 10
+  speed: 40
   lifetime: 5

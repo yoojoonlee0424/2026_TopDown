@@ -28,13 +28,22 @@ namespace TopDown.Shooting
 
         private void Update()
         {
-            lifetime += Time.deltaTime;
+            lifeTimer += Time.deltaTime;
             if(lifeTimer >= lifetime)
             {
                 gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.CompareTag("Enemy"))
+            {
+                collision.GetComponent<Health_Controll>().TakeDamage(1);
+                Debug.LogWarning("Enemy hit!");
+            }
+        }
     }
 }
 
