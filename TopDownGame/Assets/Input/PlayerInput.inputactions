@@ -25,6 +25,24 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "fd930460-e7b5-4a26-bf76-0b1769f28861",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SprintRelease",
+                    "type": "Button",
+                    "id": "47219612-8ac6-4b2f-9b70-6711ccf9ed75",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "ae250b12-da27-4974-90a6-4a8d6ace96b1",
@@ -52,6 +70,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "AimRelease",
+                    "type": "Button",
+                    "id": "9a4583ef-18ee-4a55-adb6-83c6a94cc1e4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Reload",
                     "type": "Button",
                     "id": "3504cd5e-f122-438b-b38e-47e694d1a2c0",
@@ -67,15 +94,6 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AimRelease",
-                    "type": "Button",
-                    "id": "9a4583ef-18ee-4a55-adb6-83c6a94cc1e4",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 }
             ],
@@ -319,6 +337,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "AimRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f595509-a7d4-4d67-b7bc-ea66b20cd030",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6711c6fb-c8dd-4062-a6e4-00cde4ca6b3b",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SprintRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

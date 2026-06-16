@@ -26,7 +26,7 @@ namespace TopDown.Shooting
         public IntReactiveProperty CurrentAmmoInClip { get; private set; } = new IntReactiveProperty(0);
 
         private bool isShooting = false;
-        private bool isAiming = false;
+        public bool isAiming = false;
         private bool isReloading = false;
 
         private void Awake()

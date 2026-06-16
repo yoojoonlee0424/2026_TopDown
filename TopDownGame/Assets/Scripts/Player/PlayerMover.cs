@@ -1,4 +1,5 @@
 using UnityEngine;
+using TopDown.Shooting;
 
 namespace TopDown.Movement
 {
@@ -6,6 +7,10 @@ namespace TopDown.Movement
     public class PlayerMover : MonoBehaviour
     {
         [SerializeField] private float movementSpeed;
+        [SerializeField] private float SprintSpeed;
+        [SerializeField] private GunController controller;
+
+        private bool isSprint = false;
         private Rigidbody2D body2D;
         protected Vector3 currentInput;
         public Vector3 CurrentInput => currentInput;
@@ -18,9 +23,26 @@ namespace TopDown.Movement
 
         private void FixedUpdate()
         {
-            body2D.linearVelocity = movementSpeed * currentInput * Time.fixedDeltaTime;
+            if(!isSprint || controller.isAiming)
+            {
+                body2D.linearVelocity = movementSpeed * currentInput * Time.fixedDeltaTime;
+            }
+            else
+            {
+                body2D.linearVelocity = SprintSpeed * currentInput * Time.fixedDeltaTime;
+            }
+            
         }
 
+        private void OnSprint()
+        {
+            isSprint = true;
+        }
+
+        private void OnSprintRelease()
+        {
+            isSprint = false;
+        }
 
     }
 }
