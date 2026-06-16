@@ -1,3 +1,4 @@
+using TopDown.Movement;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,16 +8,20 @@ namespace TopDown.Shooting
     public class GunController : MonoBehaviour
     {
         //나중에 SO로 관리할 것
-        [Header("무기 관련")]
-        [SerializeField] private float cooldown = 0.25f;
+        [Header("공격 관련")]
+        [SerializeField] private float FireCooldown = 0.25f;
         [SerializeField] private float reloadTime = 4f;
-        private float cooldownTimer;
+        [SerializeField] private float MeleeCooldown = 2f;
+        [SerializeField] private float meleeStaminaCost = 300;
+        private float FireCooldownTimer;
         private float reloadTimer;
+        private float meleeCooldownTimer;
 
         [Header("Ref")]
         [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private GameObject meleePrefab;
         [SerializeField] private Transform firePoint;
-        [SerializeField]private Animator muzzleFlashAnimator;
+        [SerializeField] private Animator muzzleFlashAnimator;
 
         [Header("Ammo")]
         [SerializeField] private int initialAmmo;
@@ -29,8 +34,12 @@ namespace TopDown.Shooting
         public bool isAiming = false;
         private bool isReloading = false;
 
+        private Stamina stamina;
+
         private void Awake()
         {
+            stamina = GetComponent<Stamina>();
+
             TotalAmmo.Value = initialAmmo;
 
             if(initialAmmo <= clipSize)
@@ -45,7 +54,8 @@ namespace TopDown.Shooting
 
         private void Update()
         {
-            cooldownTimer += Time.deltaTime;
+            FireCooldownTimer += Time.deltaTime;
+            meleeCooldownTimer += Time.deltaTime;
             reloadTimer += Time.deltaTime;
 
             if(reloadTimer > reloadTime)
@@ -62,7 +72,7 @@ namespace TopDown.Shooting
 
         private void Shoot()
         {
-            if (cooldownTimer < cooldown)
+            if (FireCooldownTimer < FireCooldown)
             {
                 return;
             }
@@ -81,7 +91,7 @@ namespace TopDown.Shooting
             muzzleFlashAnimator.SetTrigger("Shoot");
 
             Debug.Log("Shoot!");
-            cooldownTimer = 0;  
+            FireCooldownTimer = 0;  
             CurrentAmmoInClip.Value --;
         }
 
@@ -127,9 +137,25 @@ namespace TopDown.Shooting
             {
                 return;
             }
+            if (isReloading)
+            {
+                return;
+            }
+            if(meleeCooldownTimer < MeleeCooldown)
+            {
+                return;
+            }
+            if(stamina.currentStamina <= meleeStaminaCost)
+            {
+                return;
+            }
 
+            GameObject melee = Instantiate(meleePrefab, firePoint.position, firePoint.rotation, null);
+            meleeCooldownTimer = 0;
 
+            stamina.StaminaCost(meleeStaminaCost);
 
+            Debug.Log("Melee!");
         }
 
         #region Input
@@ -139,6 +165,11 @@ namespace TopDown.Shooting
                 Shoot();*/
 
             isShooting = true;
+
+            if(!isAiming)
+            {
+                Melee();
+            }
         }
 
         private void OnShootRelease(InputValue value)
