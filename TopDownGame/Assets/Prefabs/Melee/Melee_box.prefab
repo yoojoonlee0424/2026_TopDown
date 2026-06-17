@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2026735645211423491}
   - component: {fileID: 209239085756973503}
   - component: {fileID: 1490983871031160476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Melee_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

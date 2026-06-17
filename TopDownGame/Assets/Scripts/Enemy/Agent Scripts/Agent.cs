@@ -9,6 +9,8 @@ public class Agent : MonoBehaviour
     private AgentAnimations agentAnimations;
     private AgentMover agentMover;
 
+    [SerializeField] private GameObject meleePrefab;
+    [SerializeField] private Transform attackPoint;
     //private WeaponParent weaponParent;
 
     private Vector2 pointerInput, movementInput;
@@ -29,7 +31,8 @@ public class Agent : MonoBehaviour
     public void PerformAttack()
     {
         //weaponParent.Attack();
-        Debug.LogError("Player Hit");
+        GameObject melee = Instantiate(meleePrefab, attackPoint.position, attackPoint.rotation, null);
+        
     }
 
     private void Awake()

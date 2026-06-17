@@ -587,6 +587,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1644644334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &306953469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306953470}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &306953470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306953469}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 499952777}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &331868959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1262,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 306953470}
   m_Father: {fileID: 1977008081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &499952778
@@ -1463,15 +1495,15 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.16666666
+    y: 0
     width: 1
-    height: 0.6666666
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3
-  m_Depth: -1
+  orthographic size: 6.4479165
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1483,7 +1515,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &519420032
@@ -4073,7 +4105,6 @@ GameObject:
   - component: {fileID: 829866730}
   - component: {fileID: 829866732}
   - component: {fileID: 829866733}
-  - component: {fileID: 829866734}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -4147,7 +4178,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 191
@@ -4277,42 +4308,6 @@ MonoBehaviour:
   MaxStamina: 1000
   ChargeRate: 150
   rechargeCooldown: 3
---- !u!58 &829866734
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829866723}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!1 &1362532947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,9 +4513,9 @@ GameObject:
   - component: {fileID: 1532296056}
   - component: {fileID: 1532296048}
   - component: {fileID: 1532296055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Game_Over_test
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5454,7 +5449,7 @@ GameObject:
   - component: {fileID: 1977008084}
   - component: {fileID: 1977008087}
   m_Layer: 7
-  m_Name: NPC_Test
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5533,10 +5528,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 448
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 63
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5568,6 +5563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac447fb9eefbda946ab62907d86b0b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Agent
+  meleePrefab: {fileID: 8041310047393554510, guid: 86170e81636f9f641b3fe84cd2279b8e, type: 3}
+  attackPoint: {fileID: 306953470}
 --- !u!114 &1977008086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5605,7 +5602,7 @@ MonoBehaviour:
   aiData: {fileID: 1977008084}
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
-  attackDelay: 1
+  attackDelay: 2
   attackDistance: 1
   OnAttackPressed:
     m_PersistentCalls:

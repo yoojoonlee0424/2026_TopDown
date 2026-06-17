@@ -12,12 +12,13 @@ public class Health_Controll : MonoBehaviour
     private PlayerMovement Player;
     private bool dead = false;
 
-    float score;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         currentHealth = startingHealth;
+        Player = GetComponent<PlayerMovement>();
 
         if (GetComponent<Agent>() != null)
         {
@@ -30,8 +31,8 @@ public class Health_Controll : MonoBehaviour
 
         if(Player != null )
         {
-            Player = GetComponent<PlayerMovement>();
             currentHealth = NewGameDataManager.Instance.GetPlayerHP();
+            Debug.LogError("데이터 로드 성공");
         }
         
     }
@@ -72,6 +73,8 @@ public class Health_Controll : MonoBehaviour
                 if (GetComponent<Agent>() != null)
                 {
                     GetComponent<Agent>().enabled = false;
+                    EnemyAI enemyAi = GetComponent<EnemyAI>();
+                    Destroy(enemyAi);
                     Rigidbody2D body = GetComponent<Rigidbody2D>();
                     
                     body.freezeRotation = true;

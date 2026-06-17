@@ -3,10 +3,11 @@ using UnityEngine;
 namespace TopDown.Melee
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Melee : MonoBehaviour
+    public class EnemyMelee : MonoBehaviour
     {
         [Header("지속 시간 설정")]
         [SerializeField] private float lifetime;
+        [SerializeField] private float damage;
         private Rigidbody2D body2D;
         private float lifeTimer;
 
@@ -14,7 +15,6 @@ namespace TopDown.Melee
         {
             body2D = GetComponent<Rigidbody2D>();
         }
-        
 
         private void Update()
         {
@@ -28,11 +28,12 @@ namespace TopDown.Melee
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Player"))
             {
-                collision.GetComponent<Health_Controll>().TakeDamage(3);
-                //넉백 효과 추가
-                Debug.LogWarning("Enemy Melee!");
+                collision.GetComponent<Health_Controll>().TakeDamage(damage);
+                //속도 저하 효과 추가
+
+                Debug.LogWarning("Player Melee!");
             }
         }
     }
