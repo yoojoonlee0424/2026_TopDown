@@ -4128,7 +4128,7 @@ MonoBehaviour:
   SprintSpeed: 250
   controller: {fileID: 829866730}
   runStaminaCost: 5
-  minStamina: 100
+  minStamina: 30
 --- !u!114 &829866725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4232,7 +4232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GunController
   FireCooldown: 0.05
   reloadTime: 4
-  MeleeCooldown: 1
+  MeleeCooldown: 2
   meleeStaminaCost: 300
   bulletPrefab: {fileID: 8003185159891496671, guid: eb25f6db448c87143b12845f09bd3df6, type: 3}
   meleePrefab: {fileID: 5293197378426596430, guid: 8750bb68646d6f14eaddfa4e576b3986, type: 3}
@@ -4513,9 +4513,9 @@ GameObject:
   - component: {fileID: 1532296056}
   - component: {fileID: 1532296048}
   - component: {fileID: 1532296055}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Game_Over_test
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5445,6 +5445,7 @@ GameObject:
   - component: {fileID: 1977008082}
   - component: {fileID: 1977008086}
   - component: {fileID: 1977008085}
+  - component: {fileID: 1977008089}
   - component: {fileID: 1977008088}
   - component: {fileID: 1977008084}
   - component: {fileID: 1977008087}
@@ -5577,6 +5578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db59141161dd7b4b8cec2168cd14517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AgentMover
+  rb2d: {fileID: 0}
   maxSpeed: 2
   acceleration: 50
   deacceleration: 100
@@ -5665,6 +5667,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health_Controll
   startingHealth: 8
   currentHealth: 0
+--- !u!114 &1977008089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977008077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5613640243bac3438681daeeb116194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::knockbackScript
+  Player: {fileID: 0}
+  thrust: 3000
+  knockdownTime: 2
+  knockBack: 0
 --- !u!1 &2062978737
 GameObject:
   m_ObjectHideFlags: 0

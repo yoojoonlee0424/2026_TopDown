@@ -14,6 +14,7 @@ namespace TopDown.Movement
         [SerializeField] private float runStaminaCost = 5;
         [SerializeField] private float minStamina = 100;
 
+
         private bool isSprint = false;
         private Rigidbody2D body2D;
         protected Vector3 currentInput;
@@ -31,7 +32,6 @@ namespace TopDown.Movement
         private void FixedUpdate()
         {
             SprintRun();
-            
         }
 
         private void SprintRun()
@@ -46,6 +46,10 @@ namespace TopDown.Movement
                 stamina.StaminaCost(runStaminaCost);
             }
         }
+
+
+
+
 
         #region
         private void OnSprint()

@@ -24,7 +24,7 @@ namespace TopDown.Movement
         private void Update()
         {
             Vector3 legsLookPoint = transform.position + new Vector3(playerMover.CurrentInput.x, playerMover.CurrentInput.y);
-            LookAt(legs, Vector3.zero);
+            LookAt(legs, legsLookPoint);
         }
     }
 }

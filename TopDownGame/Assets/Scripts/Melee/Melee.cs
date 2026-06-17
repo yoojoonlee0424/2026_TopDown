@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace TopDown.Melee
 {
@@ -7,8 +8,10 @@ namespace TopDown.Melee
     {
         [Header("지속 시간 설정")]
         [SerializeField] private float lifetime;
+        [SerializeField] private float knockbackForce;
         private Rigidbody2D body2D;
         private float lifeTimer;
+
 
         private void Awake()
         {
@@ -32,7 +35,13 @@ namespace TopDown.Melee
             {
                 collision.GetComponent<Health_Controll>().TakeDamage(3);
                 //넉백 효과 추가
-                Debug.LogWarning("Enemy Melee!");
+                if(collision.GetComponent<knockbackScript>() != null)
+                {
+                    knockbackScript knockbackScript = collision.GetComponent<knockbackScript>();
+                    knockbackScript.knockBack = true;
+                }
+
+                Debug.Log("Enemy Melee");
             }
         }
     }
