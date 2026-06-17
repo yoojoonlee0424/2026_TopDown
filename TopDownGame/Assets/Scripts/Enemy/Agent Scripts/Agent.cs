@@ -29,6 +29,7 @@ public class Agent : MonoBehaviour
     public void PerformAttack()
     {
         //weaponParent.Attack();
+        Debug.LogError("Player Hit");
     }
 
     private void Awake()
@@ -40,9 +41,9 @@ public class Agent : MonoBehaviour
 
     private void AnimateCharacter()
     {
-        Vector2 lookDirection = pointerInput - (Vector2)transform.position;
-        agentAnimations.RotateToPointer(lookDirection);
-        agentAnimations.PlayAnimation(MovementInput);
+        agentAnimations.RotateToPointer();
+        //agentAnimations.PlayAnimation(MovementInput);
+        
     }
 
 

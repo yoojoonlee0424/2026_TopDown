@@ -18,11 +18,22 @@ public class Health_Controll : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
-        anim = GetComponent<Animator>();
-        Player = GetComponent<PlayerMovement>();
 
+        if (GetComponent<Agent>() != null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
+        else
+        {
+            anim = GetComponent<Animator>();
+        }
 
-        currentHealth = NewGameDataManager.Instance.GetPlayerHP();
+        if(Player != null )
+        {
+            Player = GetComponent<PlayerMovement>();
+            currentHealth = NewGameDataManager.Instance.GetPlayerHP();
+        }
+        
     }
 
     // Update is called once per frame
@@ -52,12 +63,21 @@ public class Health_Controll : MonoBehaviour
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
 
-                if(GetComponent<Test_gameover>() != null)
+                if (GetComponent<Test_gameover>() != null)
                 {
                     GetComponent<Test_gameover>().enabled = false;
                     DestroyObj();
                 }
 
+                if (GetComponent<Agent>() != null)
+                {
+                    GetComponent<Agent>().enabled = false;
+                    Rigidbody2D body = GetComponent<Rigidbody2D>();
+                    
+                    body.freezeRotation = true;
+                    body.constraints = RigidbodyConstraints2D.FreezeAll;
+                    
+                }
 
                 Debug.Log("hit");
 

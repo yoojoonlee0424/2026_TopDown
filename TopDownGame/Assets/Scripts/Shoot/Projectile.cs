@@ -42,6 +42,7 @@ namespace TopDown.Shooting
             {
                 collision.GetComponent<Health_Controll>().TakeDamage(1);
                 Debug.LogWarning("Enemy hit!");
+                Destroy(gameObject);
             }
         }
     }
