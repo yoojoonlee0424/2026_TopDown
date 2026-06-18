@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0feebbb4c8b33346bbf5f526ca9e169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Melee
-  lifetime: 0.5
+  lifetime: 0.1
   knockbackForce: 3

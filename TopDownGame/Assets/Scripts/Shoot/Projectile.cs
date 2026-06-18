@@ -44,6 +44,16 @@ namespace TopDown.Shooting
                 Debug.LogWarning("Enemy hit!");
                 Destroy(gameObject);
             }
+
+            if (collision.CompareTag("Obstacle"))
+            {
+                if (collision.GetComponent<Health_Controll>() != null)
+                {
+                    collision.GetComponent<Health_Controll>().TakeDamage(1);
+                }
+                Debug.Log("Obstacle Hit!");
+                Destroy(gameObject);
+            }
         }
     }
 }

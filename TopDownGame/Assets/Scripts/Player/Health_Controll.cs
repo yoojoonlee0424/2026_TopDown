@@ -2,6 +2,7 @@ using System.Collections;
 using TopDown.Movement;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Health_Controll : MonoBehaviour
@@ -21,6 +22,10 @@ public class Health_Controll : MonoBehaviour
         Player = GetComponent<PlayerMovement>();
 
         if (GetComponent<Agent>() != null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
+        else if(Player != null)
         {
             anim = GetComponentInChildren<Animator>();
         }
@@ -60,7 +65,7 @@ public class Health_Controll : MonoBehaviour
                 if (Player != null)
                 {
                     Player.enabled = false;
-                    GetComponent<BoxCollider2D>().enabled = false;
+                    GetComponent<PlayerInput>().enabled = false;
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
 

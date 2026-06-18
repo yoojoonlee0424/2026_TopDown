@@ -8,11 +8,11 @@ namespace TopDown.Shooting
     public class GunController : MonoBehaviour
     {
         //나중에 SO로 관리할 것
+        public GunSO gunSO;
         [Header("공격 관련")]
-        [SerializeField] private float FireCooldown = 0.25f;
-        [SerializeField] private float reloadTime = 4f;
         [SerializeField] private float MeleeCooldown = 2f;
         [SerializeField] private float meleeStaminaCost = 300;
+
         private float FireCooldownTimer;
         private float reloadTimer;
         private float meleeCooldownTimer;
@@ -24,8 +24,7 @@ namespace TopDown.Shooting
         [SerializeField] private Animator muzzleFlashAnimator;
 
         [Header("Ammo")]
-        [SerializeField] private int initialAmmo;
-        [SerializeField] private int clipSize;
+        public int initialAmmo;
 
         public IntReactiveProperty TotalAmmo { get; private set; } = new IntReactiveProperty(0);
         public IntReactiveProperty CurrentAmmoInClip { get; private set; } = new IntReactiveProperty(0);
@@ -33,6 +32,7 @@ namespace TopDown.Shooting
         private bool isShooting = false;
         public bool isAiming = false;
         private bool isReloading = false;
+        public bool isSwap = false;
 
         private Stamina stamina;
 
@@ -42,13 +42,13 @@ namespace TopDown.Shooting
 
             TotalAmmo.Value = initialAmmo;
 
-            if(initialAmmo <= clipSize)
+            if(initialAmmo <= gunSO.clipSize)
             {
                 CurrentAmmoInClip.Value = initialAmmo;
             }
             else
             {
-                CurrentAmmoInClip.Value = clipSize;
+                CurrentAmmoInClip.Value = gunSO.clipSize;
             }
         }
 
@@ -58,7 +58,20 @@ namespace TopDown.Shooting
             meleeCooldownTimer += Time.deltaTime;
             reloadTimer += Time.deltaTime;
 
-            if(reloadTimer > reloadTime)
+            if(isSwap)
+            {
+                if (initialAmmo <= gunSO.clipSize)
+                {
+                    CurrentAmmoInClip.Value = initialAmmo;
+                }
+                else
+                {
+                    CurrentAmmoInClip.Value = gunSO.clipSize;
+                }
+                isSwap = false;
+            }
+
+            if(reloadTimer > gunSO.reloadTime)
             {
                 isReloading = false;
             }
@@ -66,13 +79,14 @@ namespace TopDown.Shooting
             if (isShooting && isAiming)
             {
                 Shoot();
+                
             }
 
         }
 
         private void Shoot()
         {
-            if (FireCooldownTimer < FireCooldown)
+            if (FireCooldownTimer < gunSO.FireCooldown)
             {
                 return;
             }
@@ -81,6 +95,10 @@ namespace TopDown.Shooting
                 return;
             }
             if(isReloading)
+            {
+                return;
+            }
+            if(isSwap)
             {
                 return;
             }
@@ -107,7 +125,7 @@ namespace TopDown.Shooting
             }
 
             int missingAmmo;
-            missingAmmo = clipSize - CurrentAmmoInClip.Value;
+            missingAmmo = gunSO.clipSize - CurrentAmmoInClip.Value;
 
             if(missingAmmo == 0)
             {
