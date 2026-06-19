@@ -31,7 +31,7 @@ namespace TopDown.Shooting
 
         private bool isShooting = false;
         public bool isAiming = false;
-        private bool isReloading = false;
+        public bool isReloading = false;
         public bool isSwap = false;
 
         private Stamina stamina;

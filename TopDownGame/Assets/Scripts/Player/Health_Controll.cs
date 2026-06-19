@@ -78,9 +78,11 @@ public class Health_Controll : MonoBehaviour
                 if (GetComponent<Agent>() != null)
                 {
                     GetComponent<Agent>().enabled = false;
+                    GetComponent<CircleCollider2D>().enabled = false;
                     EnemyAI enemyAi = GetComponent<EnemyAI>();
                     Destroy(enemyAi);
                     Rigidbody2D body = GetComponent<Rigidbody2D>();
+                    
                     
                     body.freezeRotation = true;
                     body.constraints = RigidbodyConstraints2D.FreezeAll;

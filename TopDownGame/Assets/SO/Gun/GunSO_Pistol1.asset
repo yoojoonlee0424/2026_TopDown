@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13c5fc87c42a344f97a78fe9e54b615, type: 3}
   m_Name: GunSO_Pistol1
   m_EditorClassIdentifier: Assembly-CSharp::GunSO
-  FireCooldown: 0.25
+  FireCooldown: 0.5
   reloadTime: 1.5
   clipSize: 12

@@ -7,15 +7,16 @@ namespace TopDown.CameraControl
     {
         [SerializeField] private Transform playertransform;
         [SerializeField] private Camera cam;
+        [SerializeField] private GameObject defCam;
+        [SerializeField] private GameObject aimCam;
         [SerializeField] private float displacementMultiplir = 0.15f;
+        [SerializeField] private float moveSpeed = -10;
         private float zPosition = -10;
 
-        public float cameraOffset = -10.0f;
-        public float cameraHeight = 1f;
-        public float cameraSpeed = 1f;
+        
 
-        public float defCamzoom = 4.5f;
-        public float aimCamzoom = 2f;
+        //public float defCamzoom = 4.5f;
+        //public float aimCamzoom = 2f;
 
         private bool isAiming = false;
 
@@ -34,10 +35,10 @@ namespace TopDown.CameraControl
 
         private void camPlayer()
         {
-            Vector3 targetPos = new Vector3(playertransform.position.x, playertransform.position.y + cameraHeight, cameraOffset);
-            transform.position = Vector3.Lerp(transform.position, targetPos, cameraSpeed * Time.deltaTime);
+            aimCam.SetActive(false);
+            defCam.SetActive(true);
 
-            cam.orthographicSize = defCamzoom;
+            aimCam.transform.position = Vector3.MoveTowards(aimCam.transform.position, defCam.transform.position, moveSpeed * Time.deltaTime);
         }
 
         private void camAim()
@@ -47,9 +48,12 @@ namespace TopDown.CameraControl
 
             Vector3 finalCameraPosition = playertransform.position + cameraDisplacement;
             finalCameraPosition.z = zPosition;
-            transform.position = finalCameraPosition;
+            aimCam.transform.position = finalCameraPosition;
 
-            cam.orthographicSize = aimCamzoom;
+            aimCam.SetActive(true);
+            defCam.SetActive(false);
+
+            //cam.orthographicSize = aimCamzoom;
         }
 
         private void OnAim() // 마우스 오른쪽 버튼이 눌렸을 때
