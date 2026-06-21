@@ -20,6 +20,7 @@ namespace TopDown.Movement
 
         private void Awake()
         {
+            StaminaBar = GameObject.Find("Stamina_image").GetComponent<Image>();
             currentStamina = MaxStamina;
         }
 
@@ -64,6 +65,7 @@ namespace TopDown.Movement
             {
                 currentStamina = MaxStamina;
             }
+            StaminaBar.fillAmount = currentStamina / MaxStamina;
         }
 
 

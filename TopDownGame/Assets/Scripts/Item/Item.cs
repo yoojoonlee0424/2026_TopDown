@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private string itemName;
+    [SerializeField] public string itemName;
 
-    [SerializeField] private int quantity;
+    [SerializeField] public int quantity;
 
-    [SerializeField] private Sprite sprite;
+    [SerializeField] public Sprite sprite;
 
     [TextArea]
-    [SerializeField] private string itemDescription;
+    [SerializeField] public string itemDescription;
 
     private InventoryManager inventoryManager;
 

@@ -11,25 +11,52 @@ public class ItemSO : ScriptableObject
     public StatToChange statToChange = new StatToChange();
     public int amountToChangeStat;
 
-    public void UseItem()
+    public bool UseItem()
     {
         if(statToChange == StatToChange.Health)
         {
-            GameObject.Find("Player").GetComponent<Health_Controll>().AddHealth(amountToChangeStat);
-            Debug.LogError("채력추가");
+            Health_Controll health_Controll = GameObject.Find("Player").GetComponent<Health_Controll>();
+            if(health_Controll.currentHealth == health_Controll.startingHealth)
+            {
+                return false;
+            }
+            else
+            {
+                health_Controll.AddHealth(amountToChangeStat);
+                return true;
+            }
         }
-
+        
         if (statToChange == StatToChange.Ammo)
         {
-            GameObject.Find("Player").GetComponent<GunController>().AddAmmo(amountToChangeStat);
-            Debug.LogError("탄약추가");
+            GunController gunController = GameObject.Find("Player").GetComponent<GunController>();
+            if(gunController.TotalAmmo.Value == 150)
+            {
+                return false;
+            }
+            else
+            {
+                gunController.AddAmmo(amountToChangeStat);
+                return true;
+            }
         }
 
         if (statToChange == StatToChange.stamina)
         {
-            GameObject.Find("Player").GetComponent<Stamina>().AddStamina(amountToChangeStat);
-            Debug.LogError("스테미나 버프");
+            Stamina stamina = GameObject.Find("Player").GetComponent<Stamina>();
+            if(stamina.currentStamina == stamina.MaxStamina)
+            {
+                return false;
+            }
+            else
+            {
+                stamina.AddStamina(amountToChangeStat);
+                return true;
+            }
+
         }
+
+        return false;
     }
 
 

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using Unity.VisualScripting;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -89,13 +90,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         if(thisItemSelected)
         {
-            inventoryManager.UseItem(itemName);
-            this.quantity -= 1;
-            quantityText.text = this.quantity.ToString();
-            if(this.quantity <= 0)
+            bool useble = inventoryManager.UseItem(itemName);
+            if(useble)
             {
-                EmptySlot();
+                this.quantity -= 1;
+                quantityText.text = this.quantity.ToString();
+                if (this.quantity <= 0)
+                {
+                    EmptySlot();
+                }
             }
+
         }
         else
         {
@@ -127,7 +132,31 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnRightClick()
     {
+        GameObject itemToDrop = new GameObject(itemName);
+        Item newItem = itemToDrop.AddComponent<Item>();
+        newItem.quantity = 1;
+        newItem.itemName = itemName;
+        newItem.sprite = itemSprite;
+        newItem.itemDescription = itemDescription;
 
+        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
+        sr.sprite = itemSprite;
+        sr.sortingLayerName = "Obstacles";
+        sr.sortingOrder = 0;
+
+        itemToDrop.AddComponent<BoxCollider2D>();
+
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(0.5f,0.5f,0);
+        itemToDrop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        Destroy(itemToDrop );
+
+        this.quantity -= 1;
+        quantityText.text = this.quantity.ToString();
+        if (this.quantity <= 0)
+        {
+            EmptySlot();
+        }
     }
 
 }

@@ -3,6 +3,7 @@ using TMPro;
 using TopDown.Shooting;
 using DG.Tweening;
 using UnityEngine;
+using System.Collections;
 
 namespace TopDown.UI
 {
@@ -20,6 +21,12 @@ namespace TopDown.UI
         [Header("ÀÌÆåÆ®")]
         [SerializeField] private Vector2 popupIntensity;
         [SerializeField] private float popupDuration;
+
+
+        private void Awake()
+        {
+            StartCoroutine(gameStart());
+        }
 
         private void OnEnable()
         {
@@ -47,6 +54,13 @@ namespace TopDown.UI
         {
             ammoCounterText.text = $"{currentAmmo}/{totalAmmo}";
             transform.DOPunchScale(popupIntensity, popupDuration).OnComplete(() => transform.DORewind());
+        }
+
+        private IEnumerator gameStart()
+        {
+            yield return new WaitForSeconds(2f);
+            gunController = GameObject.FindGameObjectWithTag("Player").GetComponent<GunController>();
+            OnEnable();
         }
     }
 

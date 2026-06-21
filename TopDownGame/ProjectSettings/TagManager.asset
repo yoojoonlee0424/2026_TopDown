@@ -53,11 +53,11 @@ TagManager:
   - name: Props
     uniqueID: 2511692487
     locked: 0
-  - name: Obstacles
-    uniqueID: 1174792743
-    locked: 0
   - name: Player
     uniqueID: 1781282241
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1174792743
     locked: 0
   m_RenderingLayers:
   - Default

@@ -10,7 +10,18 @@ public class EnemyPlacementStep : GenerationStep
     private System.Random m_prefabPlacementRandom;
 
     [SerializeField]
+    [Tooltip("생성할 적 수")]
+    private int m_enemyCount = 5; 
+    private int m_enemyIndex;
+    private int m_enemyRandom;
+
+    [SerializeField]
     private GameObject m_enemyPrefab;
+
+    private void Awake()
+    {
+        m_enemyIndex = Random.Range(1,10) * Random.Range(10,1000);
+    }
 
     /// <summary>
     /// Here we place the player prefab on the map.
@@ -24,25 +35,26 @@ public class EnemyPlacementStep : GenerationStep
         //To ensure that the placement is repetitive we set the seed of the generator to a known value
         m_prefabPlacementRandom = new System.Random(generationData.MapGenerationSeed);
 
-        int randomIndex = m_prefabPlacementRandom.Next(generationData.PossiblePlacementPositions.Count + 1000);
-        int index = 1000;
 
-        //This is how we could randomly place any prefab (not only a player)
-        foreach (var position in generationData.PossiblePlacementPositions)
+
+        for (int i = 0; i < m_enemyCount; i++)
         {
-            //Because our PossiblePlacementPositions is a Hashset we need to loop to find the random position
-            if (index == randomIndex)
+            int randomIndex = m_prefabPlacementRandom.Next(generationData.PossiblePlacementPositions.Count + m_enemyIndex);
+            int index = 0;
+
+            //This is how we could randomly place any prefab (not only a player)
+            foreach (var position in generationData.PossiblePlacementPositions)
             {
-                //Here if we have an object that needs to be placed on multiple tiles we would add some check
-                //to ensure that we can place it on all of them (that there are no collisions)
-                //AAlternatively we could clear the terrain if there are trees or other objects in the way
-                //that can be removed (so not hills or water tiles).
-                GameObject playerReference
-                    = Instantiate(m_enemyPrefab, new(position.x, position.y, 0), Quaternion.identity);
-                generationData.PlacedObjects.Add(playerReference);
-                break;
+                if (index == randomIndex)
+                {
+                    GameObject playerReference
+                        = Instantiate(m_enemyPrefab, new(position.x, position.y, 0), Quaternion.identity);
+                    generationData.PlacedObjects.Add(playerReference);
+                    break;
+                }
+                index++;
             }
-            index++;
         }
+
     }
 }

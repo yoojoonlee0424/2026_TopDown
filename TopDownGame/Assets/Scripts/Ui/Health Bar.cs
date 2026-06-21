@@ -10,6 +10,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         health_Controll = GetComponent<Health_Controll>();
+        HealthBarImage = GameObject.Find("Health_image").GetComponent<Image>();
     }
 
     private void Update()

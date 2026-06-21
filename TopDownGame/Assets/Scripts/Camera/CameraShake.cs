@@ -7,6 +7,7 @@ public class CameraShake : MonoBehaviour
 {
     [SerializeField]private CinemachineImpulseSource Shoot_impulseSource;
     [SerializeField]private CinemachineImpulseSource Melee_impulseSource;
+    [SerializeField]private CinemachineImpulseSource Hit_impulseSource;
     private GunController _gunController;
     private InventoryManager _inventoryManager;
     private bool isShoot;
@@ -28,6 +29,7 @@ public class CameraShake : MonoBehaviour
         {
             MeleeCam();
         }
+
     }
 
     private void ShootCam()
@@ -62,6 +64,11 @@ public class CameraShake : MonoBehaviour
             return;
         }
         StartCoroutine(MeleecamShake());
+    }
+
+    public void HitCam()
+    {
+        Hit_impulseSource.GenerateImpulse();
     }
 
     private IEnumerator ShootcamShake()

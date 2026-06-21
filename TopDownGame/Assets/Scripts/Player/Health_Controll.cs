@@ -11,6 +11,7 @@ public class Health_Controll : MonoBehaviour
     public float currentHealth;
     private Animator anim;
     private PlayerMovement Player;
+    private CameraShake cameraShake;
     private bool dead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,6 +19,7 @@ public class Health_Controll : MonoBehaviour
     {
         currentHealth = startingHealth;
         Player = GetComponent<PlayerMovement>();
+        cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
 
         if (GetComponent<Agent>() != null)
         {
@@ -32,11 +34,11 @@ public class Health_Controll : MonoBehaviour
             anim = GetComponent<Animator>();
         }
 
-        if(Player != null )
+        /*if(Player != null )
         {
             currentHealth = NewGameDataManager.Instance.GetPlayerHP();
             Debug.LogError("데이터 로드 성공");
-        }
+        }*/
         
     }
 
@@ -53,6 +55,12 @@ public class Health_Controll : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
+            
+            if(Player != null)
+            {
+                cameraShake.HitCam();
+            }
+
         }
         else
         {
@@ -80,7 +88,9 @@ public class Health_Controll : MonoBehaviour
                     EnemyAI enemyAi = GetComponent<EnemyAI>();
                     Destroy(enemyAi);
                     Rigidbody2D body = GetComponent<Rigidbody2D>();
-                    
+                    EnemyDrop enemyDrop = GetComponent<EnemyDrop>();
+                    enemyDrop.HandleDrop();
+
                     
                     body.freezeRotation = true;
                     body.constraints = RigidbodyConstraints2D.FreezeAll;
