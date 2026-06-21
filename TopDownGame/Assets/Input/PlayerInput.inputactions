@@ -97,6 +97,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "c821455f-9279-4974-bfde-adff1ecb191c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Weapon1",
                     "type": "Button",
                     "id": "0f988a42-0405-4e20-90ef-d21a3b12fabb",
@@ -109,6 +118,15 @@
                     "name": "Weapon2",
                     "type": "Button",
                     "id": "3cb46fe6-ef15-4746-9fae-4145a295e0e9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "c530a136-dc0a-4a99-8858-54aaba1aa1d5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -399,6 +417,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Weapon2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c6bfe48-d728-4062-83c4-52cb2639f598",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a438660-21f3-42ad-8904-f87ca31baa44",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

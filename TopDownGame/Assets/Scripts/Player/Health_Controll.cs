@@ -13,8 +13,6 @@ public class Health_Controll : MonoBehaviour
     private PlayerMovement Player;
     private bool dead = false;
 
-    
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -101,7 +99,14 @@ public class Health_Controll : MonoBehaviour
 
 
 
-
+    public void AddHealth(float Add)
+    {
+        currentHealth += Add;
+        if(currentHealth >= startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+    }
 
 
     void DestroyObj()

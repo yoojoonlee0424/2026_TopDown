@@ -8,12 +8,14 @@ public class CameraShake : MonoBehaviour
     [SerializeField]private CinemachineImpulseSource Shoot_impulseSource;
     [SerializeField]private CinemachineImpulseSource Melee_impulseSource;
     private GunController _gunController;
+    private InventoryManager _inventoryManager;
     private bool isShoot;
     private bool isAim;
 
     private void Awake()
     {
         _gunController = FindAnyObjectByType<GunController>();
+        _inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
 
     private void Update()
@@ -34,6 +36,14 @@ public class CameraShake : MonoBehaviour
         {
             return;
         }
+        if (_inventoryManager.menuActivated)
+        {
+            return;
+        }
+        if (_inventoryManager.menuActivated)
+        {
+            return;
+        }
         StartCoroutine(ShootcamShake());
     }
 
@@ -44,6 +54,10 @@ public class CameraShake : MonoBehaviour
             return;
         }
         if(isAim)
+        {
+            return;
+        }
+        if (_inventoryManager.menuActivated)
         {
             return;
         }

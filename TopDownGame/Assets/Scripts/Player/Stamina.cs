@@ -1,4 +1,6 @@
 using System.Collections;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +23,7 @@ namespace TopDown.Movement
             currentStamina = MaxStamina;
         }
 
+
         public void StaminaCost(float cost)
         {
             currentStamina -= cost;
@@ -30,7 +33,7 @@ namespace TopDown.Movement
             }
             StaminaBar.fillAmount = currentStamina / MaxStamina;
 
-            if(recharge != null)
+            if (recharge != null)
             {
                 StopCoroutine(recharge);
             }
@@ -41,18 +44,33 @@ namespace TopDown.Movement
         {
             yield return new WaitForSeconds(rechargeCooldown);
 
-            while( currentStamina < MaxStamina )
+            while ( currentStamina < MaxStamina )
             {
                 currentStamina += ChargeRate / 10f;
                 if(currentStamina > MaxStamina)
                 {
                     currentStamina = MaxStamina;
                 }
+
                 StaminaBar.fillAmount = currentStamina / MaxStamina;
                 yield return new WaitForSeconds(0.1f);
             }
         }
 
+        public void AddStamina(float Add)
+        {
+            currentStamina += Add;
+            if(currentStamina >= MaxStamina )
+            {
+                currentStamina = MaxStamina;
+            }
+        }
+
+
+        /*private void RechargeColor()
+        {
+            StaminaBar.DOFade(0f, 0.3f).SetLoops(-1, LoopType.Yoyo);
+        }*/
     }
 }
 

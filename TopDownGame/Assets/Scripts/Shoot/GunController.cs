@@ -35,10 +35,12 @@ namespace TopDown.Shooting
         public bool isSwap = false;
 
         private Stamina stamina;
+        private InventoryManager _inventoryManager;
 
         private void Awake()
         {
             stamina = GetComponent<Stamina>();
+            _inventoryManager = FindAnyObjectByType<InventoryManager>();
 
             TotalAmmo.Value = initialAmmo;
 
@@ -167,6 +169,10 @@ namespace TopDown.Shooting
             {
                 return;
             }
+            if (_inventoryManager.menuActivated)
+            {
+                return;
+            }
 
             GameObject melee = Instantiate(meleePrefab, firePoint.position, firePoint.rotation, null);
             meleeCooldownTimer = 0;
@@ -175,6 +181,19 @@ namespace TopDown.Shooting
 
             Debug.Log("Melee!");
         }
+
+        public void AddAmmo(int Amount)
+        {
+            TotalAmmo.Value += Amount;
+            if(TotalAmmo.Value >= 150)
+            {
+                TotalAmmo.Value = 150;
+            }
+        }
+
+
+
+
 
         #region Input
         private void OnShoot(InputValue value)
