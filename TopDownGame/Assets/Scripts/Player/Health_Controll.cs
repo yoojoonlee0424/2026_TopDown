@@ -19,7 +19,7 @@ public class Health_Controll : MonoBehaviour
     {
         currentHealth = startingHealth;
         Player = GetComponent<PlayerMovement>();
-        cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+        cameraShake = GameObject.Find("CinemachineTrigger").GetComponent<CameraShake>();
 
         if (GetComponent<Agent>() != null)
         {

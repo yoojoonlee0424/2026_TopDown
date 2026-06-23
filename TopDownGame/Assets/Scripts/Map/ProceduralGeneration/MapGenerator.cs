@@ -1,4 +1,7 @@
 using System.Collections.Generic;
+using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -29,8 +32,16 @@ public class MapGenerator : MonoBehaviour
 
     public UnityEvent OnFinishedGenerating;
 
+    private void Awake()
+    {
+        
+    }
+
     void Start()
     {
+        //m_generationData.MapGenerationSeed = 123;
+        m_generationData.MapGenerationSeed = NewGameDataManager.Instance.LoadSeed();
+        Debug.Log(NewGameDataManager.Instance.LoadSeed());
         GenerateMap();
     }
 
@@ -87,7 +98,5 @@ public class MapGenerator : MonoBehaviour
 
         OnFinishedGenerating?.Invoke();
     }
-
-
 
 }

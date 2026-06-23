@@ -34,20 +34,21 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
+  Seed: 123
   Sprites:
-  - Sprite: {fileID: 2313278028701488810, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: -493603568, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: 8783211479544010488, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 527646599, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: -1442737465060348579, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: -37135182, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: 3579714133741828167, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 5252699531460982423, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: 6614691278404932023, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: -1995710985900991969, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: 729070323, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 527646599, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: 263932322, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: -1995710985900991969, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
-  - Sprite: {fileID: -1479214638, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: -37135182, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1

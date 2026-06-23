@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1174792743
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1111351825686939332, guid: e11d8d8f10d953b45a71e04d564a2278, type: 3}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7499546230110993268}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.964193, y: -0.565348, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -214,4 +214,5 @@ MonoBehaviour:
   itemName: Ammo
   quantity: 2
   sprite: {fileID: 1111351825686939332, guid: e11d8d8f10d953b45a71e04d564a2278, type: 3}
-  itemDescription: "\uC774\uAC70 \uC88B\uC740 \uAC70\uC784 \u3147\u3147"
+  itemDescription: "\uAC01\uAC01 \uD0C4\uC57D\uC744 30\uC529 \uCCB4\uC6CC \uC90D\uB2C8\uB2E4.(\uCD5C\uB300
+    \uD0C4\uC57D 150\uBC1C)"

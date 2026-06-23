@@ -14,15 +14,21 @@ namespace TopDown.Movement
         [SerializeField] private PlayerMover playerMover;
 
         private InventoryManager _inventoryManager;
+        private Menu _menu;
 
         private void Awake()
         {
             _inventoryManager = FindAnyObjectByType<InventoryManager>();
+            _menu = FindAnyObjectByType<Menu>();
         }
 
         private void OnLook(InputValue value)
         {
             if (_inventoryManager.menuActivated)
+            {
+                return;
+            }
+            if (_menu.isMenuOn)
             {
                 return;
             }
@@ -33,6 +39,10 @@ namespace TopDown.Movement
         private void Update()
         {
             if (_inventoryManager.menuActivated)
+            {
+                return;
+            }
+            if (_menu.isMenuOn)
             {
                 return;
             }

@@ -26,10 +26,11 @@ public class NewGameDataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 
 
-
+    /*
     public int GetPlayerHP()
     {
         int baseHp = gameSettingData.startHp;
@@ -44,6 +45,11 @@ public class NewGameDataManager : MonoBehaviour
         float bonusAtkSpeed = gameSettingData.atkUpgradeAmount;
 
         return baseAtkSpeed + bonusAtkSpeed * saveData.deathCount;
+    }*/
+
+    public int LoadSeed()
+    {
+        return saveData.MapSeed;
     }
 
     public float GetPlayerMoveSpeed()
@@ -51,9 +57,9 @@ public class NewGameDataManager : MonoBehaviour
         return gameSettingData.moveSpeed;
     }
 
-    public void SaveGameResult()
+    public void SaveGameResult(int seed)
     {
-        saveData.deathCount++;
+        saveData.MapSeed = seed;
 
         SaveJsonData();
     }

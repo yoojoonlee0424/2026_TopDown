@@ -2,5 +2,5 @@
 
 public class SaveData
 {
-    public int deathCount;
+    public int MapSeed;
 }

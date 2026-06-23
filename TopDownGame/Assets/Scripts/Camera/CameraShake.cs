@@ -10,6 +10,7 @@ public class CameraShake : MonoBehaviour
     [SerializeField]private CinemachineImpulseSource Hit_impulseSource;
     private GunController _gunController;
     private InventoryManager _inventoryManager;
+    private Menu _menu;
     private bool isShoot;
     private bool isAim;
 
@@ -17,6 +18,7 @@ public class CameraShake : MonoBehaviour
     {
         _gunController = FindAnyObjectByType<GunController>();
         _inventoryManager = FindAnyObjectByType<InventoryManager>();
+        _menu = FindAnyObjectByType<Menu>();
     }
 
     private void Update()
@@ -46,7 +48,11 @@ public class CameraShake : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(ShootcamShake());
+        if(_menu.isMenuOn)
+        {
+            return;
+        }
+        Invoke("ShootcamShake", 0.1f);
     }
 
     private void MeleeCam()
@@ -63,7 +69,11 @@ public class CameraShake : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(MeleecamShake());
+        if (_menu.isMenuOn)
+        {
+            return;
+        }
+        Invoke("MeleecamShake",0.1f);
     }
 
     public void HitCam()
@@ -71,17 +81,13 @@ public class CameraShake : MonoBehaviour
         Hit_impulseSource.GenerateImpulse();
     }
 
-    private IEnumerator ShootcamShake()
+    private void ShootcamShake()
     {
-        yield return new WaitForSeconds(0.1f);
-
         Shoot_impulseSource.GenerateImpulse();
     }
 
-    private IEnumerator MeleecamShake()
+    private void MeleecamShake()
     {
-        yield return new WaitForSeconds(0.1f);
-
         Melee_impulseSource.GenerateImpulse();
     }
 

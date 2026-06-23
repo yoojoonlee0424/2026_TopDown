@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public string titleSceneName = "TitleScene";
     public string gameSceneName = "GameScene";
+    public string gameSceneName2 = "GameScene";
 
 
     private void Awake()
@@ -27,9 +28,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(gameSceneName);
     }
 
+    public void StartLoopGame()
+    {
+        SceneManager.LoadScene(gameSceneName2);
+    }
+
     public void GameOver()
     {
-        NewGameDataManager.Instance.SaveGameResult();
+        NewGameDataManager.Instance.SaveGameResult(MapSeedSaver.Instance._seed);
         GoTitle();
     }
 

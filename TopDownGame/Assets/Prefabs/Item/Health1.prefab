@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1174792743
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -902086654454736923, guid: af667fdd5d7447642aa15ebc13ecfcf6, type: 3}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4620132040132607717}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.17, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -214,4 +214,4 @@ MonoBehaviour:
   itemName: Health
   quantity: 1
   sprite: {fileID: -902086654454736923, guid: af667fdd5d7447642aa15ebc13ecfcf6, type: 3}
-  itemDescription: "\uC774\uAC70"
+  itemDescription: "\uCCB4\uB825\uC758 40%\uC529 \uD68C\uBCF5 \uC2DC\uCF1C\uC90D\uB2C8\uB2E4."

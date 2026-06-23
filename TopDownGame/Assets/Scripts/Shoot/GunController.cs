@@ -2,6 +2,7 @@ using TopDown.Movement;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 namespace TopDown.Shooting
 {
@@ -22,6 +23,9 @@ namespace TopDown.Shooting
         [SerializeField] private GameObject meleePrefab;
         [SerializeField] private Transform firePoint;
         [SerializeField] private Animator muzzleFlashAnimator;
+        [SerializeField] private Light2D muzzleFlash;
+        [SerializeField] private Light2D gunLight;
+        [SerializeField] private Light2D bodyLight;
 
         [Header("Ammo")]
         public int initialAmmo;
@@ -36,11 +40,15 @@ namespace TopDown.Shooting
 
         private Stamina stamina;
         private InventoryManager _inventoryManager;
+        private Menu _menu;
 
         private void Awake()
         {
             stamina = GetComponent<Stamina>();
             _inventoryManager = FindAnyObjectByType<InventoryManager>();
+            _menu = FindAnyObjectByType<Menu>();
+
+            muzzleFlashOff();
 
             TotalAmmo.Value = initialAmmo;
 
@@ -59,6 +67,8 @@ namespace TopDown.Shooting
             FireCooldownTimer += Time.deltaTime;
             meleeCooldownTimer += Time.deltaTime;
             reloadTimer += Time.deltaTime;
+
+            gunLightOff();
 
             if(isSwap)
             {
@@ -81,7 +91,11 @@ namespace TopDown.Shooting
             if (isShooting && isAiming)
             {
                 Shoot();
-                
+            }
+
+            if(isAiming)
+            {
+                gunLightOn();
             }
 
         }
@@ -108,11 +122,15 @@ namespace TopDown.Shooting
             GameObject bullet = Instantiate(bulletPrefab,firePoint.position,firePoint.rotation,null);
             bullet.GetComponent<Projectile>().ShootBullet(firePoint);
 
+            muzzleFlashOn();
+
             muzzleFlashAnimator.SetTrigger("Shoot");
 
             Debug.Log("Shoot!");
             FireCooldownTimer = 0;  
             CurrentAmmoInClip.Value --;
+
+            Invoke("muzzleFlashOff", 0.05f);
         }
 
         private void Reload()
@@ -173,6 +191,10 @@ namespace TopDown.Shooting
             {
                 return;
             }
+            if (_menu.isMenuOn)
+            {
+                return;
+            }
 
             GameObject melee = Instantiate(meleePrefab, firePoint.position, firePoint.rotation, null);
             meleeCooldownTimer = 0;
@@ -192,8 +214,26 @@ namespace TopDown.Shooting
         }
 
 
+        private void muzzleFlashOn()
+        {
+            muzzleFlash.enabled = true;
+        }
 
+        private void muzzleFlashOff()
+        {
+            muzzleFlash.enabled = false;
+        }
 
+        private void gunLightOn()
+        {
+            gunLight.enabled = true;
+            bodyLight.enabled = false;
+        }
+        private void gunLightOff()
+        {
+            gunLight.enabled = false;
+            bodyLight.enabled = true;
+        }
 
         #region Input
         private void OnShoot(InputValue value)

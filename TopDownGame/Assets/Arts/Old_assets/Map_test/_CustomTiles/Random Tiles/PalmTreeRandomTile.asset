@@ -36,11 +36,11 @@ MonoBehaviour:
   m_ColliderType: 1
   Seed: 123
   Sprites:
-  - Sprite: {fileID: -1671116271, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 1038414573, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 3
-  - Sprite: {fileID: -359376247, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 1038414573, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 3
-  - Sprite: {fileID: -762709557, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 1038414573, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 3
-  - Sprite: {fileID: -865602548, guid: c66eb1b253768d341bfbc1c1addd1aa4, type: 3}
+  - Sprite: {fileID: 1038414573, guid: 9e8b1f02ef1f3ef4492e820780917793, type: 3}
     Weight: 1
