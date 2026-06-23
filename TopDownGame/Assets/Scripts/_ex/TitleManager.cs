@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class TitleManager : MonoBehaviour
 {
-    public SaveData saveData;
 
     public GameObject gameModPanel;
     public GameObject SetModPanel;
@@ -17,6 +16,7 @@ public class TitleManager : MonoBehaviour
         gameModPanel.SetActive(false);
         SetModPanel.SetActive(false);
         RePanel.SetActive(false);
+        Debug.Log(NewGameDataManager.Instance.saveData.MapSeed.ToString());
     }
 
     public void GameStartButton()
@@ -61,8 +61,8 @@ public class TitleManager : MonoBehaviour
 
     public void OpenRe()
     {
-        Seed_Text.text = "시드 :" + saveData.MapSeed.ToString();
-        Time_Text.text = "생존 시간 :" + saveData.Time.ToString() + "초";
+        Seed_Text.text = "시드 :" + NewGameDataManager.Instance.saveData.MapSeed.ToString();
+        Time_Text.text = "생존 시간 :" + NewGameDataManager.Instance.saveData.Time.ToString() + "초";
         RePanel.SetActive(true);
 
     }    
