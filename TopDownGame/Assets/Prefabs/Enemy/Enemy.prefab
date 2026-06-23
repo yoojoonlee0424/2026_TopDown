@@ -300,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health_Controll
   startingHealth: 8
   currentHealth: 0
+  dead: 0
 --- !u!114 &5791439935909335028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,11 +314,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDrop
   dropTable:
-  - itemPrefab: {fileID: 0}
+  - itemPrefab: {fileID: 7499546230110993268, guid: 6122a5534322bcf47ab8f10391cc98dc, type: 3}
     dropChance: 25
-  - itemPrefab: {fileID: 0}
+  - itemPrefab: {fileID: 4620132040132607717, guid: 051e34a951ca1bd4face4fb8c5394376, type: 3}
     dropChance: 5
-  - itemPrefab: {fileID: 0}
+  - itemPrefab: {fileID: 5188320817417588132, guid: 9f6f8a665da392a4994e40d6dd6da49a, type: 3}
     dropChance: 10
 --- !u!114 &8914077039641098730
 MonoBehaviour:
@@ -527,8 +528,8 @@ GameObject:
   - component: {fileID: 7903604094745105298}
   - component: {fileID: 944820388063709739}
   m_Layer: 0
-  m_Name: Sprite
-  m_TagString: Untagged
+  m_Name: EnemySprite
+  m_TagString: Enemy_Sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,12 +599,12 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1445766798541207667, guid: 94667719f7cab1d47aa9cf4ebbfcc6f5, type: 3}
+  m_Sprite: {fileID: 8793639957104055765, guid: 39cf18b78bcfe164ab70982bdb3ad32c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.23, y: 0.31}
+  m_Size: {x: 1.65, y: 2.95}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -618,7 +619,7 @@ Animator:
   m_GameObject: {fileID: 4637819270242366277}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa922c6f47d99c54ab9a2337e3f73f52, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -674,18 +675,18 @@ MonoBehaviour:
   m_InstanceId: 0
   m_ShadowShape2DComponent: {fileID: 7226936086801952771}
   m_ShadowShape2DProvider:
-    rid: 4774112977953489084
+    rid: 4774113010589630544
   m_ShadowCastingSource: 2
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0, y: 0.45899963, z: 0}
-      m_Extent: {x: 0.38749695, y: 0.7250061, z: 0}
+      m_Center: {x: 0, y: 0.29299927, z: 0}
+      m_Extent: {x: 0.28599548, y: 0.54600525, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.04
     m_FlipX: 0
     m_FlipY: 0
-    m_InitialTrim: 0.04
+    m_InitialTrim: 0
   m_CastingOption: 1
   m_PreviousTrimEdge: 0.04
   m_PreviousEdgeProcessing: 1
@@ -694,7 +695,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4774112977953489084
+    - rid: 4774113010589630544
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
 --- !u!1 &4817784083190245489

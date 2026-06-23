@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: 754150a3d1e90d84ea6602d3a74340ea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5708405345425119950
+    second: Death0001-sheet_0
+  - first:
+      213: 6398778747497765258
+    second: Death0001-sheet_1
+  - first:
+      213: -3939912983942128926
+    second: Death0001-sheet_2
+  - first:
+      213: -6154526161355511267
+    second: Death0001-sheet_3
+  - first:
+      213: -8017765033040785662
+    second: Death0001-sheet_4
+  - first:
+      213: 7679324643405554615
+    second: Death0001-sheet_5
+  - first:
+      213: 3956277425553380551
+    second: Death0001-sheet_6
+  - first:
+      213: 4325631495338729300
+    second: Death0001-sheet_7
+  - first:
+      213: 2897462029735804496
+    second: Death0001-sheet_8
+  - first:
+      213: 2882055047414322111
+    second: Death0001-sheet_9
+  - first:
+      213: -1319497333036971156
+    second: Death0001-sheet_10
+  - first:
+      213: -2559589466434196495
+    second: Death0001-sheet_11
+  - first:
+      213: -1977214203654435370
+    second: Death0001-sheet_12
+  - first:
+      213: 4780977261218403032
+    second: Death0001-sheet_13
+  - first:
+      213: 6212549556611234835
+    second: Death0001-sheet_14
+  - first:
+      213: -5188702688798986231
+    second: Death0001-sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death0001-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 296
+        width: 186
+        height: 299
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca5100da64583f40800000000000000
+      internalID: 5708405345425119950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 239
+        width: 196
+        height: 356
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a895ce06e570dc850800000000000000
+      internalID: 6398778747497765258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 166
+        width: 220
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea1e22040e9259c0800000000000000
+      internalID: -3939912983942128926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 80
+        width: 381
+        height: 494
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a6e87701bb69aa0800000000000000
+      internalID: -6154526161355511267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 19
+        width: 538
+        height: 515
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f4e01be2d2bb090800000000000000
+      internalID: -8017765033040785662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 9
+        width: 534
+        height: 542
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3671d8311729a60800000000000000
+      internalID: 7679324643405554615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 13
+        width: 531
+        height: 545
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c491077b5587e630800000000000000
+      internalID: 3956277425553380551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4256
+        y: 13
+        width: 535
+        height: 552
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f18e44deab70c30800000000000000
+      internalID: 4325631495338729300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4856
+        y: 19
+        width: 531
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05eb5985d5ad53820800000000000000
+      internalID: 2897462029735804496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 5456
+        y: 23
+        width: 531
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3904cbbcd1ff720800000000000000
+      internalID: 2882055047414322111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6060
+        y: 20
+        width: 521
+        height: 565
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b8146aa2430bde0800000000000000
+      internalID: -1319497333036971156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 6660
+        y: 20
+        width: 518
+        height: 561
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbab5a01f28a7cd0800000000000000
+      internalID: -2559589466434196495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 7260
+        y: 19
+        width: 518
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd025258268f84e0800000000000000
+      internalID: -1977214203654435370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 7860
+        y: 19
+        width: 518
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d294260d71795240800000000000000
+      internalID: 4780977261218403032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 8460
+        y: 19
+        width: 518
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cb25ff7e8673650800000000000000
+      internalID: 6212549556611234835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death0001-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 9060
+        y: 19
+        width: 518
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900b50d35660ef7b0800000000000000
+      internalID: -5188702688798986231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3fd5b5db979d2b64b80b2228ead62b8f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.25},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Death0001-sheet_0: 5708405345425119950
+      Death0001-sheet_1: 6398778747497765258
+      Death0001-sheet_10: -1319497333036971156
+      Death0001-sheet_11: -2559589466434196495
+      Death0001-sheet_12: -1977214203654435370
+      Death0001-sheet_13: 4780977261218403032
+      Death0001-sheet_14: 6212549556611234835
+      Death0001-sheet_15: -5188702688798986231
+      Death0001-sheet_2: -3939912983942128926
+      Death0001-sheet_3: -6154526161355511267
+      Death0001-sheet_4: -8017765033040785662
+      Death0001-sheet_5: 7679324643405554615
+      Death0001-sheet_6: 3956277425553380551
+      Death0001-sheet_7: 4325631495338729300
+      Death0001-sheet_8: 2897462029735804496
+      Death0001-sheet_9: 2882055047414322111
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

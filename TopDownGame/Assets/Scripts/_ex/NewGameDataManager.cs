@@ -64,6 +64,13 @@ public class NewGameDataManager : MonoBehaviour
         SaveJsonData();
     }
 
+    public void SaveGameTime(float time)
+    {
+        saveData.Time = time;
+
+        SaveJsonData();
+    }
+
     public void SaveJsonData()
     {
         string json = JsonUtility.ToJson(saveData,true);

@@ -4,8 +4,17 @@ public class Menu : MonoBehaviour
 {
     public bool isMenuOn =false;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject GameOvermenuPanel;
+    public Health_Controll health_Controll;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
+        Invoke("findPlayerRef", 1f);
+        GameOvermenuPanel.SetActive(false);
+    }
+
+
+
     void Update()
     {
         if(isMenuOn)
@@ -16,6 +25,14 @@ public class Menu : MonoBehaviour
         {
             CloseMenu();
         }
+        if(health_Controll != null)
+        {
+            if (health_Controll.dead)
+            {
+                GameOverMenu();
+            }
+        }
+ 
     }
 
 
@@ -41,10 +58,23 @@ public class Menu : MonoBehaviour
         GameManager.Instance.GoTitle();
     }
 
+    private void GameOverMenu()
+    {
+        GameOvermenuPanel.SetActive(true);
+    }
 
+    private void findPlayerRef()
+    {
+        health_Controll = GameObject.FindWithTag("Player").GetComponent<Health_Controll>();
+    }
 
     private void OnMenu()
     {
         isMenuOn = !isMenuOn;
+    }
+
+    public void isMenuOff()
+    {
+        isMenuOn = false;   
     }
 }

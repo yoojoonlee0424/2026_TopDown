@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     public void GoTitle()
     {
+        //NewGameDataManager.Instance.SaveGameResult(MapSeedSaver.Instance._seed);
+        //NewGameDataManager.Instance.SaveGameTime(GameTimer.Instance.PlayerTime);
         SceneManager.LoadScene(titleSceneName);
     }
 

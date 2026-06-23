@@ -7,14 +7,24 @@ public class AgentAnimations : MonoBehaviour
     [SerializeField] private Transform torso;
     [SerializeField] private Transform Player;
 
+    private Health_Controll health_Controll;
     private Animator animator;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         Player = GameObject.FindWithTag("Player").transform;
-
+        health_Controll = GetComponentInParent<Health_Controll>();
     }
+
+    private void Update()
+    {
+        if(health_Controll.dead)
+        {
+            animator.SetTrigger("die");
+        }
+    }
+
 
     public void RotateToPointer()
     {
@@ -39,9 +49,9 @@ public class AgentAnimations : MonoBehaviour
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-    public void PlayAnimation(Vector2 movementInput)
+    /*public void PlayAnimation(Vector2 movementInput)
     {
         animator.SetBool("Running", movementInput.magnitude > 0);
 
-    }
+    }*/
 }

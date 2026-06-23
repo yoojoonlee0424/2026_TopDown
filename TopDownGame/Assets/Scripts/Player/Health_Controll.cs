@@ -12,7 +12,7 @@ public class Health_Controll : MonoBehaviour
     private Animator anim;
     private PlayerMovement Player;
     private CameraShake cameraShake;
-    private bool dead = false;
+    public bool dead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -21,13 +21,14 @@ public class Health_Controll : MonoBehaviour
         Player = GetComponent<PlayerMovement>();
         cameraShake = GameObject.Find("CinemachineTrigger").GetComponent<CameraShake>();
 
+
         if (GetComponent<Agent>() != null)
         {
-            anim = GetComponentInChildren<Animator>();
+            anim = GameObject.FindWithTag("Enemy_Sprite").GetComponent<Animator>();
         }
         else if(Player != null)
         {
-            anim = GetComponentInChildren<Animator>();
+            anim = GameObject.Find("Torso").GetComponent<Animator>();
         }
         else
         {
@@ -72,7 +73,7 @@ public class Health_Controll : MonoBehaviour
                 {
                     Player.enabled = false;
                     GetComponent<PlayerInput>().enabled = false;
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    GameObject.Find("Legs").GetComponent<SpriteRenderer>().enabled = false;
                 }
 
                 if (GetComponent<Test_gameover>() != null)
