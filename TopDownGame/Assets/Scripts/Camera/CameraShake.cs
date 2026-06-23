@@ -1,4 +1,3 @@
-using System.Collections;
 using TopDown.Shooting;
 using Unity.Cinemachine;
 using UnityEngine;

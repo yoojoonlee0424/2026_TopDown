@@ -1,9 +1,6 @@
-using System.Collections;
 using TopDown.Movement;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class Health_Controll : MonoBehaviour
 {
